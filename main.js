@@ -18,6 +18,7 @@ let handleRequest = (request, response) => {
       } else {
         data = appendHTML(data, "tituloPagina", "Listado de Proveedores");
         getPromise(urlProveedores).then((res) => {
+          res.reverse();
           res.forEach((element) => {
             data = appendHTML(
               data,
@@ -42,6 +43,7 @@ let handleRequest = (request, response) => {
       } else {
         data = appendHTML(data, "tituloPagina", "Listado de Clientes");
         getPromise(urlClientes).then((res) => {
+            res.reverse();
           res.forEach((element) => {
             data = appendHTML(
               data,
